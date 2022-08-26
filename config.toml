@@ -1,0 +1,81 @@
+baseURL = "/"
+title = "ANASTASIIA BEREST"
+author = " "
+copyright = " "
+paginate = 3
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+
+
+[params]
+  behance = "https://www.behance.net/xforeal"
+  linkedin = "https://www.linkedin.com/in/mad-max-man-24438b20a/"
+  github = "https://bitbucket.org/xfr2019"
+  email = "xforealn2019@gmail.com"
+  tel = "380636338075"
+  description = "FE/WEB dev & SCRUM PM and Advertise Creator"
+  mainSections = ["works"]
+  blogSections = ["posts"]
+
+# CSS Plugins
+# [[params.plugins.css]]
+# link = "fonts/stylesheet.css"
+
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 1
+
+  [[menu.main]]
+    name = "CV"
+    url = "/cv/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Main Github"
+    url = "https://github.com/Slevin2017"
+    weight = 3
+
+  [[menu.main]]
+    name = "My Articles"
+    url = "/posts/"
+    weight = 4
+
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[privacy]
+
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[services]
+
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true
+

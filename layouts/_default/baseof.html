@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{ $title := print .Title " · " .Site.Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{ $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" />
+    <link rel="stylesheet" href="{{ `fonts/stylesheet.css` | relURL }}" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="{{ `fav/apple-touch-icon.png` | relURL }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ `fav/favicon-32x32.png` | relURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ `fav/favicon-16x16.png` | relURL }}">
+<link rel="manifest" href="{{ `fav/site.webmanifest` | relURL }}">
+<link rel="mask-icon" href="{{ `fav/safari-pinned-tab.svg` | relURL }}" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#c5a47e">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body class="{{ block "body_class" . }} {{ end }}">
+
+    <div class="site-wrapper">
+        {{- block "main" . }}{{- end }}
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> &copy; {{ .Date.Format "2006" }}</section>
+                <nav class="site-footer-nav">
+                   
+                    {{ if .Site.Params.behance }}<a href="{{ .Site.Params.behance }}" target="_blank" rel="noopener">Benahce</a>{{ end }}
+
+                    {{ if .Site.Params.linkedin }}<a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">Linkedin</a>{{ end }}
+
+                    {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Github</a>{{ end }}
+
+                    <a href="mailto:{{ .Site.Params.email }}" target="_blank" rel="noopener" style="opacity: 0.5;">{{ .Site.Params.email }}</a>
+
+                    <a href="tel:{{ .Site.Params.tel }}" target="_blank" rel="noopener" style="opacity: 0.5;">{{ .Site.Params.tel }}</a>
+                    
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

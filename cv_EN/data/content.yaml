@@ -1,0 +1,129 @@
+BasicInfo:
+  FirstName: Anastasiia 
+  LastName: Berest
+  
+  Contacts:
+    - Icon: fas fa-phone
+      Info: <a href="tel:+38 063 63 38 075">+38 063 63 38 075</a>
+    - Icon: fas fa-envelope
+      Info: <a href="mailto:xforealn2019@gmail.com">xforealn2019@gmail.com</a>
+    - Icon: fas fa-map-marker-alt
+      Info: <a href="https://github.com/Slevin2017">https://github.com/Slevin2017</a>
+    - Icon: fas fa-map-marker-alt
+      Info: <a href="https://www.linkedin.com/in/anastasiia-madmax%D0%BC%D0%B0n-rnr-24438b20a/" target="_blank">linkdin</a>
+
+    - Icon: fas fa-map-marker-alt
+      Info: <a href="https://www.behance.net/xforeal" target="_blank">behance</a>
+
+
+Experience:
+  - Employer: Fireodds Media
+    Place: Internet
+    Info: Have experience working with American business.
+    Positions:
+      - Title: FE/Web
+        Date: 2019 - 2021
+        Details:
+          - Coding some landing pages, site template, create and customize admin panels
+          - Performance / speed / web optimization
+          - Plugin Integration
+  
+  - Employer: Finlink
+    Place: Kyiv, Internet
+    Positions:
+      - Title: Web coder
+        Date: 2017 - 2019
+        Details:
+          - working with lp, emails, banners
+          - integration plugins
+          - ci
+          - optimization performance
+
+  - Employer: SMM technologies
+    Place: Kyiv
+    Positions:
+      - Title:  HTML, CSS coder 
+        Date: 2014 - 2017
+        Details:
+          - Coding some landing pages, emails template, banners
+          - Integration different libraries
+
+Education:
+  - Course: Kyiv Polytechnic Institute
+    Date: 01.09.2007 - 28.02.2013
+    Details: Computer technologies and systems Printing and Publishing 
+  - Course: Liceum NTUU KPI
+    Date: 2005 - 2007
+    Details: Mathematic
+Skills:
+  - Family: Programming
+    Items:
+      - Hugo + Forestry + Netlify (Jamstack)
+      - HTML5 / liquid
+      - SASS/SCSS/CSS
+      - Gulp / Webpack / Git
+      - Bootstrap / Vue Bootstrap
+      - Responsive Web Design
+
+  - Family: CMS
+    Items:
+      - WP
+      - Strapi/Contentful/Forestry/Netlify CMS/Prismic CMS
+
+  - Family: Frameworks
+    Items:
+      - Gridsome/Hugo
+      - React Native (base, pets project)
+
+  - Family: Developer Tools
+    Items:
+      - Git
+      - Netlify CI
+
+  - Family: UI/UX/Design
+    Items: 
+      - Adobe Photoshop
+      - Adobe Illustrator
+      - Google Web Designer
+      - Bootstrap Studio
+      - Figma
+      - Zeplin
+
+  - Family: Other
+    Items:
+      - Google Webmaster Tools
+      - JIRA / Trello / Asana
+      - Facebook Pixel
+      - PWA
+      - Web Push (onesignal)
+      - Google Tag Manager
+
+  - Family: Emails
+    Items:
+      - Customer.io API
+      - Mailchimp
+      - Zurb for Emails
+      - Mjml
+      - Native table markup
+
+Languages:
+  - Name: Ukrainian
+    Level: Native
+  - Name: English
+    Level: B1
+  - Name: Russian
+    Level: Native
+
+Diplomas:
+  - freeCodeCamp
+  - Coursera
+
+
+Works:
+  - https://cryptoobmen.io/
+  - https://slotsbrain.com/
+  - https://beforis.com/
+  - https://bet-bro.com.ua/
+  - https://weave-resource.com/
+  - https://fireodds.netlify.app/
+  - https://spins-v1.netlify.app/
