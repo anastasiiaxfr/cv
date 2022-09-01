@@ -1,0 +1,46 @@
+<aside class="sidebar">
+  <div class="sidebar--sticky">
+    <div class="about">
+      <img src="{{`../images/img11.jpg` |relURL }}" alt="{{ .Title }}" />
+      <h2>About me</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris.
+      </p>
+
+      <div class="soc">
+        <a href="#" class="soc__link"
+          ><i class="fa-brands fa-facebook-f"></i
+        ></a>
+        <a href="#" class="soc__link"
+          ><i class="fa-brands fa-square-instagram"></i
+        ></a>
+        <a href="#" class="soc__link"><i class="fa-brands fa-pinterest"></i></a>
+      </div>
+    </div>
+
+    <div class="top-post__wrapper">
+      <div class="top-post">
+        <h3 class="">Top posts</h3>
+
+        <ul class="top-post__list">
+          {{ $pages := where site.RegularPages "Type" "in"
+          site.Params.blogSections }} {{ range first 3 $pages }}
+
+          <li>
+            <a href="{{ .Permalink }}">
+              {{ .Title }}
+            </a>
+          </li>
+
+          {{ end }}
+        </ul>
+      </div>
+
+      <a href="#" class="banner--sm">
+        <img src="{{`../images/banner_250.jpg` |relURL }}" alt="{{ .Title }}" />
+      </a>
+    </div>
+  </div>
+</aside>

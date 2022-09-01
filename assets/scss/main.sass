@@ -1,0 +1,547 @@
+$container: 1120px
+$content: 893px
+$single: 980px
+
+$sm: 640px
+$md: 860px
+$lg: 1020px
+
+$white: #fff
+$text_color: #626262
+$gray_light: #f0f0f0
+$main: #b4ad9e
+
+$trs: all 0.5s ease-in-out
+
+$ffHeading: 'PlayfairDisplay'
+$ffSubHeading: 'ubuntu'
+$ffText: 'PlayfairDisplay'
+$ffBack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+
+=font($fz, $lh: 16, $fw: 400, $ff: $ffText)
+    $lh: $lh/$fz
+    $fz: $fz/16 + rem
+    $ff: $ff, $ffBack
+    font: $fw $fz/$lh $ff
+
+$fontSrc: '../fonts/Ubuntu/'
+$fontSrc2: '../fonts/PlayfairDisplay/'
+
+$fntName2: (PlayfairDisplay-Black, 900), (PlayfairDisplay-Bold, 700), (PlayfairDisplay, 400)
+
+$fntName: (ubuntubold, 700), (ubuntumedium, 500), (ubuntu, 400), (ubuntulight, 300)
+
+=fnt($fntName, $fntSrc)
+    @each $fnt, $fntw in $fntName
+        @font-face
+            $fntFldr: $fntSrc
+            font-family: '' + $fnt + ''
+            font-style: normal
+            font-weight: #{$fntw}
+            font-display: swap
+            src: local('' + $fnt + ''), local('' + $fnt + ''), url($fntFldr +'#{$fnt}.woff') format('woff'), url($fntFldr +'#{$fnt}.woff2') format('woff2'), url($fntFldr +'#{$fnt}.ttf') format('ttf')
+
++fnt($fntName2, $fontSrc2)
++fnt($fntName, $fontSrc)
+
+*
+    box-sizing: border-box
+
+    &::selection
+        background-color: $gray-light
+
+%container
+    max-width: $container
+    margin: 0 auto
+    padding-left: 30px
+    padding-right: 30px
+
+%cat
+    color: $main
+    text-transform: uppercase
+    +font(14, 14*1.2, 300, $ffSubHeading)
+
+%title
+    +font(30, 30*1.2, 400, $ffHeading)
+
+%text
+    +font(14, 14*1.71, 400, $ffText)
+
+h1
+    @extend %title
+
+h2
+    @extend %title
+    letter-spacing: 0.75px
+
+h3
+    color: $main
+    text-transform: uppercase
+    +font(14, 14, 300, $ffSubHeading)
+
+body, html
+    margin: 0
+    padding: 0
+    color: $text_color
+    font-family: $ffText
+
+body
+    display: flex
+    min-height: 100vh
+    flex-direction: column
+
+.footer
+    padding: 40px 10px
+    background-color: $gray_light
+
+    &__content
+        @extend %container
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+
+        @media only screen and (max-width: $sm)
+            justify-content: center
+
+    &__menu
+        margin: 10px 0
+        padding: 0
+
+    .soc
+        margin: 10px 0
+
+    &__link
+        display: inline-flex
+        list-style-type: none
+        margin-right: 20px
+        transition: $trs
+        a
+            color: inherit
+            text-decoration: none
+
+        &:hover
+            color: $main
+
+        &:last-child
+            margin-right: 0
+
+.nav
+    padding: 0
+    &__menu
+        display: flex
+        align-items: center
+        justify-content: space-between
+        @media only screen and (max-width: $sm)
+            display: block
+
+    &__link
+        display: inline-flex
+        padding: 10px 20px
+        list-style-type: none
+        text-transform: uppercase
+        transition: $trs
+
+        &:last-child
+            padding-right: 0
+
+        &:hover
+            color: $main
+
+        a
+            color: inherit
+            text-decoration: none
+
+.header
+    &__content
+        @extend %container
+        @media only screen and (max-width: $sm)
+            text-align: center
+            padding-top: 30px
+
+            .nav__menu
+                display: block
+
+.section
+    display: block
+    &__content
+        @extend %container
+    &__text
+        padding-bottom: 50px
+
+.article
+    &__thumbnail
+        img
+            display: block
+            width: 100%
+    &__cart
+        max-width: $content
+        margin: 100px auto 135px
+
+        @media only screen and (max-width: $sm)
+            margin: 50px auto
+    &__cat
+        @extend %cat
+    &__title
+        margin-top: 28px
+        margin-bottom: 34px
+        @extend %title
+    &__content
+        margin-bottom: 52px
+        @extend %text
+    &__btn a
+        @extend %cat
+        text-decoration: none
+
+        &:hover
+            color: $text_color
+
+.post
+    max-width: 420px
+    width: 50%
+
+    margin-bottom: 132px
+
+    user-select: none
+
+    @media only screen and (max-width: $sm)
+        margin-bottom: 50px
+        width: 100%
+    @media only screen and (max-width: $md)
+        width: 100%
+        max-width: 100%
+        padding: 0 30px
+        margin-bottom: 50px
+    @media only screen and (max-width: $lg)
+        padding: 0 30px
+
+    &s
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        max-width: $content
+        margin: 0 auto
+
+        &__action
+            width: 100%
+            margin-bottom: 165px
+            text-align: center
+            @media only screen and (max-width: $sm)
+                margin-bottom: 50px
+
+    &__image
+        display: block
+        max-width: 100%
+        width: 100%
+        height: 279px
+        object-fit: cover
+
+    &__cat
+        @extend %cat
+        margin-bottom: 28px
+        margin-top: 32px
+
+    &__title
+        margin-bottom: 34px
+        margin-top: 0
+        @extend %title
+    &__text
+        @extend %text
+
+    &__link
+        display: block
+        color: inherit
+        text-decoration: none
+    &__description, & p
+        @extend %text
+        p
+            &:last-child
+                margin-bottom: 0
+            &:first-child
+                margin-top: 0
+
+.signup
+    background: $gray-light
+    padding-top: 75px
+    padding-bottom: 75px
+    //margin-top: 122px
+    margin-bottom: 103px
+    text-align: center
+
+
+    &__form
+        max-width: 400px
+        margin: 0 auto
+
+        input
+            width: 95%
+            border: none
+            border-bottom: 2px solid #000
+            background: transparent
+            text-align: left
+            +font(14, 14, 300, $ffText)
+
+            &:hover, &:focus, &:active
+
+                appearance: none
+                outline: none
+
+    h2
+        margin-top: 0
+        margin-bottom: 83px
+
+.single
+    &__content
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        max-width: $container
+        margin-left: auto
+        margin-right: auto
+        margin-top: 100px
+        margin-bottom: 80px
+        padding: 0 30px
+
+    &__thumbnail
+        @extend %container
+
+        img
+            display: block
+            max-width: 100%
+            width: 100%
+            height: 510px
+            object-fit: cover
+
+            @media only screen and (max-width: $sm)
+                height: auto
+
+    &__main
+        max-width: 660px
+        margin-right: 45px
+        margin-left: 5%
+        @media only screen and (max-width: $lg)
+            max-width: 100%
+            margin-right: auto
+            margin-left: auto
+.sidebar
+    width: calc(95% - 660px - 45px)
+    @media only screen and (max-width: $lg)
+        width: 100%
+        margin-top: 50px
+    &--sticky
+        position: sticky
+        top: 15px
+
+.wrapper
+    flex: 1 0 auto
+
+.main
+    margin-top: 72px
+    margin-bottom: 72px
+
+.tags
+    @extend %cat
+    a
+        text-decoration: none
+        color: inherit
+
+.soc
+    &__block
+        max-width: $container
+        margin: 0 auto
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        padding: 0 30px
+    &__title
+        margin: 0
+        margin-right: 23px
+        text-transform: uppercase
+        +font(13, 13, 300, $ffSubHeading)
+        color: $main
+    &__heading
+        margin-right: 16px
+
+    &__link
+        color: $main
+        margin-right: 16px
+        text-decoration: none
+        &:last-child
+            margin-right: 0
+        &:hover
+            color: darken($main, 10%)
+
+        .footer &
+            color: $text_color
+
+.content
+    @extend %text
+
+    img
+        max-width: 100%
+        margin-top: 50px
+        margin-bottom: 50px
+        &:last-child
+            margin-bottom: 0
+
+    blockquote
+        margin-top: 54px
+        margin-bottom: 54px
+        font-style: italic
+
+    &__inner
+        margin-bottom: 69px
+
+.about
+    margin-bottom: 75px
+    p
+        +font(12, 12*1.67, 400, $ffText)
+        margin-top: 20px
+        margin-bottom: 20px
+    h2
+        +font(24, 24*0.83, 400, $ffHeading)
+
+.top-post
+    @media only screen and (max-width: $lg)
+        order: 1
+        margin-left: 30px
+    @media only screen and (max-width: $sm)
+        margin-left: 0
+        margin-top: 30px
+    &__list
+        padding-left: 16px
+        margin-bottom: 55px
+
+        li
+            margin-top: 30px
+            margin-bottom: 30px
+            +font(16, 16, 400, $ffText)
+
+        a
+            +font(16, 16, 400, $ffText)
+            text-decoration: none
+            color: inherit
+    &__wrapper
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+
+.related-post
+    background-color: $gray_light
+    padding-top: 70px
+    padding-bottom: 90px
+
+    & a:hover
+        img
+            transition: $trs
+            opacity: 0.5
+
+    h3
+        +font(14, 14, 300, $ffSubHeading)
+        color: $main
+        text-transform: uppercase
+
+    img
+        display: block
+        max-width: 100%
+        width: 272px
+        height: 182px
+
+        object-fit: cover
+        margin-bottom: 24px
+
+    &__wrapper
+        display: flex
+        flex-wrap: wrap
+        padding: 0
+        margin-top: 40px
+
+    &__item
+        width: 32%
+        list-style-type: none
+        margin-right: 2%
+        @media only screen and (max-width: $md)
+            width: 48%
+            margin-right: auto
+            margin: 30px 1%
+            img
+                width: 100%
+        @media only screen and (max-width: $sm)
+            width: 100%
+        a
+            +font(20, 20, 400, $ffHeading)
+            text-decoration: none
+            color: inherit
+
+        &:last-child
+            margin-right: 0
+
+.comments
+    padding-top: 67px
+    margin-bottom: 38px
+    &__total
+        text-transform: uppercase
+        color: $main
+        +font(14, 14, 300, $ffSubHeading)
+        margin-bottom: 40px
+    &__item
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-start
+        margin-bottom: 57px
+        &:last-child
+            margin-bottom: 0
+        textarea
+            width: 100%
+            padding: 30px 35px
+            resize: none
+            border: solid 1px #c8c8c8
+            border-radius: 5px
+    &__ava img
+        width: 70px
+        height: 70px
+        margin-right: 20px
+        border-radius: 50%
+    &__text
+        width: calc(100% - 100px)
+    &__title
+        margin-top: 0
+        margin-bottom: 14px
+        +font(14, 14, 700, $ffHeading)
+    &__description
+        margin-bottom: 26px
+        +font(14, 14*1.71, 400, $ffText)
+    &__btn
+        color: $main
+        text-transform: uppercase
+        text-decoration: none
+        +font(14, 14, 300, $ffSubHeading)
+        &:hover
+            color: $text_color
+
+.btn
+    &--bd
+        padding: 21px 34px 22px
+        border: solid 1px $text_color
+        text-decoration: none
+        color: $text_color
+        transition: $trs
+        &:hover
+            background-color: $main
+            border-color: $main
+            color: $white
+
+.about
+    img
+        display: block
+        width: 100%
+        height: 177px
+        object-fit: cover
+    h2
+        margin-top: 28px
+        margin-bottom: 20px
+
+.banner
+    &--sm
+        display: block
+        img
+            display: block

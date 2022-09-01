@@ -1,0 +1,6 @@
+<section class="posts">
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.blogSections }}
+    {{ range $index,  $element := first 4 $pages }}
+        {{- partial "post-card.html" (dict "context" . "index" $index "home" $.IsHome) -}}
+    {{ end }}
+</section>
