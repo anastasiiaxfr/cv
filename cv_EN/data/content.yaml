@@ -6,14 +6,15 @@ BasicInfo:
     - Icon: fas fa-phone
       Info: <a href="tel:+380630633226">+38 063 063 3 22 6</a>
     - Icon: fas fa-envelope
-      Info: <a href="mailto:anastasiiaberest@gmail.com">anastasiiaberest@gmail.com</a>
+      Info: <a href="mailto:xforealn2019@gmail.com">xforealn2019@gmail.com</a>
     - Icon: fas fa-map-marker-alt
       Info: <a href="https://github.com/Slevin2017">https://github.com/Slevin2017</a>
     - Icon: fas fa-map-marker-alt
-      Info: <a href="https://www.linkedin.com/in/anastasiia-berest-690446249//" target="_blank">https://www.linkedin.com/in/anastasiia-berest-690446249/</a>
+      Info: <a href="https://www.linkedin.com/in/anastasiia-berest-690446249/" target="_blank">https://www.linkedin.com/in/anastasiia-berest-690446249/n</a>
 
     - Icon: fas fa-map-marker-alt
       Info: <a href="https://www.behance.net/xforeal" target="_blank">https://www.behance.net/xforeal</a>
+
     - Icon: fas fa-map-marker-alt
       Info: <a href="https://cv-berest-anastasiia.netlify.app/" target="_blank">https://cv-berest-anastasiia.netlify.app/</a>
 
@@ -61,7 +62,6 @@ Skills:
   - Family: Programming
     Items:
       - Hugo + Forestry + Netlify (Jamstack)
-      - Vue / Nuxt
       - HTML5 / liquid
       - SASS/SCSS/CSS
       - Gulp / Webpack / Git
@@ -70,13 +70,12 @@ Skills:
 
   - Family: CMS
     Items:
-      - WP
-      - Strapi/Contentful/Forestry/Netlify CMS/Prismic CMS
-
+      - Word Press /
+      - Forestry / Netlify CMS
   - Family: Frameworks
     Items:
-      - Nuxt/Hugo
-      - React Native (base, pets project)
+      - Hugo
+      - Vue
 
   - Family: Developer Tools
     Items:

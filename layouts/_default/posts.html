@@ -1,143 +1,32 @@
+{{ define "body_class" }} tag-template  {{ end }}
+
 {{ define "main" }}
 
-<header class="header">
+<header class="site-header">
     {{- partial "site-header.html" $ -}}
+
+    {{- partial "header-background.html" $ -}}
+        <div class="inner site-header-content">
+            <h1 class="site-title">{{ .Title }}</h1>
+            <h2 class="site-description">
+                {{ if .Param "description" }}
+                    {{ .Param "description" }}
+                {{ else }}
+                    A collection of {{ len .Pages }} post{{ if gt (len .Pages) 1 }}s{{ end }}
+                {{ end }}
+            </h2>
+        </div>
+    </div>
 </header>
 
-<main class="main">
-    <div class="">
-
-        <article class="{{ if not (.Param "feature_image") }} no-image {{ end }}">
-  
-
-            {{ if .Param "feature_image" }}
-            <figure class="single__thumbnail">
-                <img src="{{ .Param "feature_image" }}" alt="{{ .Title }}" />
-            </figure>
+<main id="site-main" class="site-main outer">
+    <div class="inner posts">
+        <div class="post-feed">
+            {{ range $index, $element := .Pages }}
+                {{- partial "post-news.html" (dict "context" . "index" $index "home" $.IsHome) -}}
             {{ end }}
-
-            <div class="single__content">
-
-                <div class="single__main">
-                {{ with .Params.tags }}
-                    {{ $primaryTag := (index . 0) }}
-                    <section class="tags">
-                        <a href="{{ "/tags/" | relLangURL }}{{ $primaryTag | urlize }}">{{ $primaryTag }}</a>
-                    </section>
-                {{ end }}
-
-                    <h1 class="title">{{ .Title }}</h1>
-                    <section class="content">
-                        <div class="">
-                            {{ .Content }}
-                        </div>
-                        
-                            <div class="soc__block">
-                                <span class="soc__title">Share</span>
-
-                                <nav class="soc">
-                                    <a href="#" class="soc__link"><i class="fa-brands fa-facebook-f"></i></a>
-                                    <a href="#" class="soc__link"><i class="fa-brands fa-twitter"></i></a>
-                                    <a href="#" class="soc__link"><i class="fa-brands fa-google-plus-g"></i></a>
-                                    <a href="#" class="soc__link"><i class="fa-brands fa-pinterest"></i></a>
-                                </nav>
-                            </div>
-                       
-                    </section>
-                </div>
-
-                <aside class="single__sidebar">
-                    <div class="about">
-                    <img src="{{`../images/img11.jpg` |relURL }}" alt="{{ .Title }}">
-                    <h2>About me</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                        </p>
-
-                        <div class="soc">
-                            <a href="#" class="soc__link"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" class="soc__link"><i class="fa-brands fa-square-instagram"></i></a>
-                            <a href="#" class="soc__link"><i class="fa-brands fa-pinterest"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="top-post">
-                        <h3 class="title--3">Top posts</h3>
-
-                        <ul class="top-post__list">
-                        {{ $pages := where site.RegularPages "Type" "in" site.Params.blogSections }}
-                        {{ range $index, $element := $pages }}
-                        
-                        <li>
-                            <a href="{{ .Permalink }}">
-                                {{ .Title }}
-                            </a>
-                        </li>
-
-                        {{ end }}
-                        </ul>
-                    </div>
-
-                    <a href="#" class="banner--sm">
-                        <img src="{{`../images/banner_250.jpg` |relURL }}" alt="{{ .Title }}">
-                    </a>
-
-                </aside>
-               
-            </div>
-
-            <section class="related-post">
-               <div class="section__content">
-
-                <div class="section__row">
-                    
-                    {{ $related := .Site.RegularPages.Related . | first 3 }}
-                    {{ with $related }}
-                    <h3>you may also like</h3>
-                    <ul class="related-post__wrapper">
-                        {{ range . }}
-                        <li class="related-post__item">
-                            <a href="{{ .RelPermalink }}">
-                            <img src="{{ .Params.feature_image }}" alt="{{ .Title }}">
-                            {{ .Title }}</a></li>
-                        {{ end }}
-                    </ul>
-                    {{ end }}
-                    
-                </div>
-               </div>
-            </section>
-
-               <!-- {{ if .Param "summary" }}
-                    <div class="excerpt">{{ .Summary }}</div>
-                {{ end }} 
-
-                <div class="byline">
-                    <section class="byline-content">
-
-                        {{ if .Param "author" }}
-                          
-                        {{ end }}
-
-                        <section class="byline-meta">
-                            {{ if .Param "author" }}
-                                <h4 class="author-name">{{ .Param "author" }}</h4>
-                            {{ end }}
-                            <div class="byline-meta-content">
-                                <time class="byline-meta-date" datetime="{{.Date.Format "2006-31-01"}}">{{.Date.Format "2 January 2006"}}</time>
-                                <span class="byline-reading-time"><span class="bull">&bull;</span> {{ .ReadingTime }} min read</span>
-                            </div>
-                        </section>
-
-                    </section>
-                </div>  -->
-           
-
-        </article>
-
+        </div>
     </div>
 </main>
-
-
 
 {{ end }}

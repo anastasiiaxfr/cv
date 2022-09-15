@@ -1,19 +1,19 @@
-<nav class="nav__menu">
-  
-        {{ if $.Site.Params.logo  }}
-            <a class="nav__logo" href="{{ $.Site.BaseURL }}"><img src="{{ $.Site.Params.logo | relURL }}" alt="{{ $.Site.Title }}" {{ if $.Site.Params.logo_w  }} width="{{ $.Site.Params.logo_w }}" {{ end }}/></a>
+<nav class="site-nav">
+    <div class="site-nav-left">
+        {{ if eq $.Site.Params.logo "thisshouldfail" }}
+            <a class="site-nav-logo" href="{{ $.Site.BaseURL }}"><img src="{{ $.Site.Params.logo }}" alt="{{ $.Site.Title }}" /></a>
         {{ else }}
-            <a class="nav__logo" href="{{ $.Site.BaseURL }}">{{ $.Site.Title }}</a>
+            <a class="site-nav-logo" href="{{ $.Site.BaseURL }}">{{ $.Site.Title }}</a>
         {{ end }}
         
-        
+        <div class="site-nav-content">
             <ul class="nav" role="menu">
-                {{ range $.Site.Menus.header }}
-                <li class="nav__link" role="menuitem"><a href="{{ .URL }}">{{- .Name -}}</a></li>
+                {{ range $.Site.Menus.main }}
+                <li class="nav-home" role="menuitem"><a href="{{ .URL }}">{{- .Name -}}</a></li>
                 {{ end }}
             </ul>
+        </div>
         
-        
-   
+    </div>
 </nav>
 

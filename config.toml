@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "minimo"
+title = "ANASTASIIA BEREST"
 author = " "
 copyright = " "
 paginate = 3
@@ -11,67 +11,65 @@ footnoteReturnLinkContents = "^"
 
 
 [params]
-  description = " "
+  behance = "https://www.behance.net/xforeal"
+  linkedin = "https://www.linkedin.com/in/mad-max-man-24438b20a/"
+  github = "https://bitbucket.org/xfr2019"
+  email = "xforealn2019@gmail.com"
+  tel = "380636338075"
+  description = "FE/WEB dev & SCRUM PM and Advertise Creator"
+  mainSections = ["works"]
   blogSections = ["posts"]
-  mainSections = ["blog"]
-  logo = "/images/logo.png"
-  logo_w = 119
-# CSS Plugins
-# [[params.plugins.js]]
-# link = "lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"
 
-[[params.social]]
-    disabled = true
-    url = "#"
-    title = "fb"
-    icon = "fa-brands fa-facebook-f"
-[[params.social]]
-    display = true
-    url = "#"
-    title = "tw"
-    icon = "fa-brands fa-twitter"
-[[params.social]]
-    display = true
-    url = "#"
-    title = "im"
-    icon = "fa-brands fa-instagram"
+# CSS Plugins
+# [[params.plugins.css]]
+# link = "fonts/stylesheet.css"
 
 
 [menu]
-  [[menu.header]]
-    name = "lifestyle"
-    url = "/lifestyle/"
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
     weight = 1
 
-  [[menu.header]]
-    name = "photodiary"
-    url = "/photodiary/"
+  [[menu.main]]
+    name = "CV"
+    url = "/cv/"
     weight = 2
 
-  [[menu.header]]
-    name = "music"
-    url = "/music/"
+  [[menu.main]]
+    name = "Main Github"
+    url = "https://github.com/Slevin2017"
     weight = 3
 
-  [[menu.header]]
-    name = "travel"
-    url = "/travel/"
+  [[menu.main]]
+    name = "My Articles"
+    url = "/posts/"
     weight = 4
 
-  [[menu.footer]]
-    name = "Terms and conditions"
-    url = "/terms/"
-    weight = 1
 
-  [[menu.footer]]
-    name = "Privacy"
-    url = "/privacy/"
-    weight = 2
-# [taxonomies]
-# category = "categories"
-# tag = "tags"
-# series = "series"
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
 
+[privacy]
+
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
 
 [services]
 
@@ -80,16 +78,4 @@ footnoteReturnLinkContents = "^"
 
   [services.twitter]
     disableInlineCSS = true
-
-
-[sidebar]
-  [sidebar.fb]
-    icon = "fa fa-afcebook"
-    url="#"
-  [sidebar.im]
-    icon = "fa fa-afcebook"
-    url="#"
-  [sidebar.pinterest]
-    icon = "fa fa-afcebook"
-    url="#"
 
