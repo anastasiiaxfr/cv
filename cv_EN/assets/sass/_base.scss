@@ -47,13 +47,3 @@ body {
     color: $color-white;
     background-color: darken(rgba($color-primary, 0.6), 10%);
 }
-
-
-.contact__item>span {
-    line-height: 1.1;
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-}

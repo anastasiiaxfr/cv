@@ -4,19 +4,16 @@ BasicInfo:
   
   Contacts:
     - Icon: fas fa-phone
-      Info: <a href="tel:+380630633226">+38 063 063 3 22 6</a>
+      Info: <a href="tel:+38 063 63 38 075">+38 063 63 38 075</a>
     - Icon: fas fa-envelope
       Info: <a href="mailto:xforealn2019@gmail.com">xforealn2019@gmail.com</a>
     - Icon: fas fa-map-marker-alt
       Info: <a href="https://github.com/Slevin2017">https://github.com/Slevin2017</a>
     - Icon: fas fa-map-marker-alt
-      Info: <a href="https://www.linkedin.com/in/anastasiia-berest-690446249/" target="_blank">https://www.linkedin.com/in/anastasiia-berest-690446249/n</a>
+      Info: <a href="https://www.linkedin.com/in/anastasiia-madmax%D0%BC%D0%B0n-rnr-24438b20a/" target="_blank">linkdin</a>
 
     - Icon: fas fa-map-marker-alt
-      Info: <a href="https://www.behance.net/xforeal" target="_blank">https://www.behance.net/xforeal</a>
-
-    - Icon: fas fa-map-marker-alt
-      Info: <a href="https://cv-berest-anastasiia.netlify.app/" target="_blank">https://cv-berest-anastasiia.netlify.app/</a>
+      Info: <a href="https://www.behance.net/xforeal" target="_blank">behance</a>
 
 
 Experience:
@@ -70,12 +67,13 @@ Skills:
 
   - Family: CMS
     Items:
-      - Word Press /
-      - Forestry / Netlify CMS
+      - WP
+      - Strapi/Contentful/Forestry/Netlify CMS/Prismic CMS
+
   - Family: Frameworks
     Items:
-      - Hugo
-      - Vue
+      - Gridsome/Hugo
+      - React Native (base, pets project)
 
   - Family: Developer Tools
     Items:
@@ -122,4 +120,10 @@ Diplomas:
 
 
 Works:
-  - https://cv-berest-anastasiia.netlify.app/
+  - https://cryptoobmen.io/
+  - https://slotsbrain.com/
+  - https://beforis.com/
+  - https://bet-bro.com.ua/
+  - https://weave-resource.com/
+  - https://fireodds.netlify.app/
+  - https://spins-v1.netlify.app/

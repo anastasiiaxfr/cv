@@ -41,7 +41,8 @@ anastasiiaberest@gmail.com
 ## SKILLS
 - **Programming:**
  Hugo + Forestry + Netlify /
- Vue / WordPress
+ WordPress /
+ Vue
  
 - **Web:**
   HTML5 / liquid, 
