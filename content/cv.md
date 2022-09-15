@@ -16,7 +16,7 @@ anastasiiaberest@gmail.com
 
 #### Atlas IAC / Fireodds Digital Performing Agency
 
-**FE/WEB Middle developer, creator** / jun 2019 - aug 2021
+**FE/WEB Middle developer, creator** / jun 2019 - 2021
 
 - Coding some landing pages, site template, create and customize admin panels
 - Performance / speed / web optimization
@@ -41,8 +41,7 @@ anastasiiaberest@gmail.com
 ## SKILLS
 - **Programming:**
  Hugo + Forestry + Netlify /
- Prismic + Nuxt /
- Vue
+ Vue / WordPress
  
 - **Web:**
   HTML5 / liquid, 
