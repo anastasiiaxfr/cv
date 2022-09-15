@@ -11,7 +11,7 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{ $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
+    {{ $styles := resources.Get "scss/main.sass" | resources.ExecuteAsTemplate "style.main.sass" . | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" />
     <link rel="stylesheet" href="{{ `fonts/stylesheet.css` | relURL }}" />
 
@@ -23,34 +23,49 @@
 <link rel="mask-icon" href="{{ `fav/safari-pinned-tab.svg` | relURL }}" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#c5a47e">
 <meta name="theme-color" content="#ffffff">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="{{ block "body_class" . }} {{ end }}">
 
-    <div class="site-wrapper">
+    <div class="wrapper">
         {{- block "main" . }}{{- end }}
-
-
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> &copy; {{ .Date.Format "2006" }}</section>
-                <nav class="site-footer-nav">
-                   
-                    {{ if .Site.Params.behance }}<a href="{{ .Site.Params.behance }}" target="_blank" rel="noopener">Benahce</a>{{ end }}
-
-                    {{ if .Site.Params.linkedin }}<a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">Linkedin</a>{{ end }}
-
-                    {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Github</a>{{ end }}
-
-                    <a href="mailto:{{ .Site.Params.email }}" target="_blank" rel="noopener" style="opacity: 0.5;">{{ .Site.Params.email }}</a>
-
-                    <a href="tel:{{ .Site.Params.tel }}" target="_blank" rel="noopener" style="opacity: 0.5;">{{ .Site.Params.tel }}</a>
-                    
-                </nav>
-            </div>
-        </footer>
-
     </div>
+    <footer class="footer">
+        <div class="footer__content">
+            <ul class="footer__menu">
+                {{ range $.Site.Menus.footer }}
+                <li class="footer__link" role="menuitem"><a href="{{ .URL }}">{{- .Name -}}</a></li>
+                {{ end }}
+            </ul>
+            <nav class="soc">
+               <span class="soc__heading"> Follow </span>
+                
+                {{ range $.Site.Params.social }}
+                <a href="mailto:{{ .url }}" target="_blank" rel="noopener" title="{{ .title }}" class="soc__link">
+                    <i class="{{ .icon }}"></i>
+                </a>
+                {{ end }}
+            </nav>
+        </div>
+    </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<script>
+    $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: false,
+    items: 1,
+    autoHeight: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: true
+
+})
+</script>
 </body>
 </html>
