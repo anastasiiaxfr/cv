@@ -1,7 +1,7 @@
 +++
 date = 2021-12-19T22:00:00Z
 feature_image = "/images/1_psheqlxmpjfuzpu3doonog.jpeg"
-title = "Vue Slots"
+title = "Vue Slots "
 
 +++
 **Docs:**
